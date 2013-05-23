@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Nome:
+  = @parlamentar.nome
+%p
+  %b Partido:
+  = @parlamentar.partido
+%p
+  %b Legislatura:
+  = @parlamentar.legislatura
+
+= link_to 'Edit', edit_parlamentar_path(@parlamentar)
+\|
+= link_to 'Back', parlamentares_path

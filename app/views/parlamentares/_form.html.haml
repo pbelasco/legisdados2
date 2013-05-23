@@ -1,0 +1,19 @@
+= form_for @parlamentar do |f|
+  - if @parlamentar.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@parlamentar.errors.count, "error")} prohibited this parlamentar from being saved:"
+      %ul
+        - @parlamentar.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :nome
+    = f.text_field :nome
+  .field
+    = f.label :partido
+    = f.text_field :partido
+  .field
+    = f.label :legislatura
+    = f.text_field :legislatura
+  .actions
+    = f.submit 'Save', :class => :button

@@ -1,0 +1,23 @@
+%h1 Listing parlamentares
+
+%table
+  %tr
+    %th Nome
+    %th Partido
+    %th Legislatura
+    %th
+    %th
+    %th
+
+  - @parlamentares.each do |parlamentar|
+    %tr
+      %td= parlamentar.nome
+      %td= parlamentar.partido
+      %td= parlamentar.legislatura
+      %td= link_to 'Show', parlamentar
+      %td= link_to 'Edit', edit_parlamentar_path(parlamentar)
+      %td= link_to 'Destroy', parlamentar, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Parlamentar', new_parlamentar_path

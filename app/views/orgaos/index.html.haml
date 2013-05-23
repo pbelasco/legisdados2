@@ -1,0 +1,23 @@
+%h1 Listing orgaos
+
+%table
+  %tr
+    %th Id
+    %th Sigla
+    %th Descricao
+    %th
+    %th
+    %th
+
+  - @orgaos.each do |orgao|
+    %tr
+      %td= orgao.id
+      %td= orgao.sigla
+      %td= orgao.descricao
+      %td= link_to 'Show', orgao
+      %td= link_to 'Edit', edit_orgao_path(orgao)
+      %td= link_to 'Destroy', orgao, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Orgao', new_orgao_path

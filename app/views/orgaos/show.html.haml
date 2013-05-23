@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Id:
+  = @orgao.id
+%p
+  %b Sigla:
+  = @orgao.sigla
+%p
+  %b Descricao:
+  = @orgao.descricao
+
+= link_to 'Edit', edit_orgao_path(@orgao)
+\|
+= link_to 'Back', orgaos_path

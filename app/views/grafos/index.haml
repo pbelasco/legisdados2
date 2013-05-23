@@ -1,0 +1,23 @@
+-#encoding: utf-8
+%h1 Parlamentares e comissões
+- @parlamentares.each do |dep|
+	%ul
+		%li
+			%h3=dep.nome
+			%p=dep.partido
+			%p=dep.email
+		%ul
+			.titular
+				Titular
+				-dep.memberships.where(:tipo => "titular").each do |com|
+					%li
+						=com.orgao.sigla unless com.orgao.nil?
+						%small= com.orgao.descricao unless com.orgao.nil?
+				.titular
+					Suplente
+
+				-dep.memberships.where(:tipo => "suplente").each do |com|
+					%li
+						=com.orgao.sigla unless com.orgao.nil?
+						%small= com.orgao.descricao unless com.orgao.nil?
+			
